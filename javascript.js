@@ -1,12 +1,14 @@
+let declaration;
 function getComputerChoice() {
+
     let choice= ["rock","paper","scissors"];
     let randomchoice= choice[Math.floor(Math.random()*choice.length)];
     return randomchoice
 }
-function playround(playerSelection,computerSelection) {
-    playerSelection="rock";
-    computerSelection=getComputerChoice();
-    let declaration;
+function playround() {
+   const playerSelection=prompt("what is your play?").toLowerCase();
+   const computerSelection=getComputerChoice();
+   let declaration;
     if (playerSelection==computerSelection){
         declaration="it's a draw";
     }
@@ -32,4 +34,14 @@ function playround(playerSelection,computerSelection) {
     }
 return declaration
     }
+function game() {
+console.log(playround());
+console.log(playround());
+console.log(playround());
+console.log(playround());
+console.log(playround());
+
+
     
+}
+
