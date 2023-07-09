@@ -1,4 +1,7 @@
 let declaration;
+let wincount=0;
+let losscount=0;
+let drawcount=0;
 function getComputerChoice() {
 
     let choice= ["rock","paper","scissors"];
@@ -10,29 +13,48 @@ function playround() {
    const computerSelection=getComputerChoice();
    let declaration;
     if (playerSelection==computerSelection){
-        declaration="it's a draw";
+        result="it's a draw!";
+        alert (result);
     }
     else {
         if (playerSelection=="rock" && computerSelection=="scissors"){
-            declaration="you win! rock beats scissors"
+            result="you win!";
+            alert (result+" "+"rock beats scissors");
         }
         else if (playerSelection=="scissors"&& computerSelection=="rock"){
-            declaration="you lose! rock beats scissors"
+            result="you lose!";
+            alert(result+" "+"rock beats scissors")
         }
         else if (playerSelection=="rock"&& computerSelection=="paper"){
-            declaration="you lose! paper beats rock"
+            result="you lose!";
+            alert(result+" "+"paper beats rock");
         }
         else if (playerSelection=="paper"&& computerSelection=="rock"){
-            declaration="you win! paper beats rock"
+            result="you win!";
+            alert (result+" "+"paper beats rock")
         }
         else if (playerSelection=="scissors"&& computerSelection=="paper"){
-            declaration="you win! scissors beats paper"
+            result="you win!";
+            alert (result+" "+"scissors beats paper");
         }
         else if (playerSelection=="paper"&& computerSelection=="scissors"){
-            declaration="you lose! scissors beats paper"
+            result="you lose!";
+            alert(result+" "+"scissors beats paper")
         }
     }
-return declaration
+    if (result=="you win!") {
+        wincount=wincount+1;
+        alert ("games won by you: "+wincount+", games won by opponent: "+losscount+", number of draws: "+drawcount);
+    }
+    if (result=="you lose!") {
+        losscount=losscount+1;
+        alert ("games won by you: "+wincount+", games won by opponent: "+losscount+", number of draws: "+drawcount);
+    }
+    if (result=="it's a draw!") {
+        drawcount=drawcount+1;
+        alert ("games won by you: "+wincount+", games won by opponent: "+losscount+", number of draws: "+drawcount);
+    }
+
     }
 function game() {
 console.log(playround());
@@ -40,6 +62,15 @@ console.log(playround());
 console.log(playround());
 console.log(playround());
 console.log(playround());
+if (wincount>losscount) {
+    alert("you win the game");
+}
+else if (wincount<losscount) {
+    alert("you lose the game");
+}
+else {
+    alert ("it's a tie");
+}
 
 
     
